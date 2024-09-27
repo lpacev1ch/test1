@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}  <!-- Загрузить тег static -->
+    <link href="{% static 'style.css' %}" type="text/css" rel="stylesheet">
+    <script src="{% static 'script.js' %}" defer></script>
+    <title>Ретро кухня</title>
+</head>
+<body>
+    <div class="mainPage">
+        <div class="logo">
+            <img src="{% static 'img/Обложка иллюстрацииheader.png' %}">
+        </div>
+        <div class="plashka">
+
+            <h1 class="Headline">БЛЮДО ДНЯ</h1>
+
+            <h1 class="razделитель"></h1>
+
+            <!-- Секция для проектов категории "Тестнет" -->
+            <details>
+                <summary class="Headline">ТЕСТНЕТЫ</summary>
+                <div class="item.testnet">
+                    {% for project in testnet_projects %}
+                        <p><a href="{% url 'project_detail' project.id %}">{{ project.name }} - {{ project.price }}$</a></p>
+                    {% empty %}
+                        <p>Нет доступных тестнет проектов</p>
+                    {% endfor %}
+                </div>
+            </details>
+
+            <h1 class="razделитель"></h1>
+
+            <!-- Секция для проектов категории "Мейннет" -->
+            <details>
+                <summary class="Headline">МЕЙННЕТЫ</summary>
+                <div class="item.mainnet">
+                    {% for project in mainnet_projects %}
+                        <p><a href="{% url 'project_detail' project.id %}">{{ project.name }} - {{ project.price }}$</a></p>
+                    {% empty %}
+                        <p>Нет доступных мейннет проектов</p>
+                    {% endfor %}
+                </div>
+            </details>
+
+        </div>
+    </div>
+</body>
+</html>

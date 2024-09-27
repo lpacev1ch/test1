@@ -1,0 +1,401 @@
+body{
+    height: 100%;
+    overflow: scroll;
+    width: 100%;
+    position: relative;
+    background: #0B0B0D;
+}
+/* html, body {
+    height: 100%; 
+    margin: 0; 
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; 
+    background: #0B0B0D;
+    
+} */
+
+
+
+
+
+
+
+
+
+
+/*Типографика*/
+
+.Headline{
+    font-family: Raleway;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 23.48px;
+    letter-spacing: 0.015em;
+    text-align: left;
+
+}
+
+.razdelitel{
+    width: 100%;
+    height: 0px;
+    border: 0.5px solid #0B0B0D;
+}
+
+.description{
+    font-family: Raleway;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.09px;
+    text-align: left;
+    color: #C5C5C5;
+}
+
+.headlinePrice{
+    font-family: Raleway;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23.48px;
+    letter-spacing: 0.015em;
+    text-align: right;
+}
+
+
+
+
+
+
+
+
+
+
+/*Главное меню*/
+
+.mainPage{
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Начало страницы */
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.logo{
+    position: absolute;
+    width: 100%;
+    height: 265.81px;
+    top: 77.14px;
+    /*gap: 0px;*/
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+}
+
+.plashka {
+    overflow-y: auto;
+    width: 100%;
+    margin: 1px; 
+    position: relative; /* fixed */
+    height: calc(100% - 303px);
+    top: 303px;
+    border-radius: 20px;
+    background: #FFFFFF;
+    border: 1px solid #0B0B0D;
+    opacity: 1;
+    padding: 20px;
+    box-sizing: border-box; 
+    flex-grow: 1;
+}
+
+
+
+/* .plashka::-webkit-scrollbar {
+    width: 8px; /* Ширина полосы прокрутки 
+} 
+
+.plashka::-webkit-scrollbar-thumb {
+    background: #0B0B0D; /* Цвет ползунка 
+    border-radius: 10px; /* Закругление ползунка 
+}
+
+.plashka::-webkit-scrollbar-thumb:hover {
+    background: #0B0B0D; /* Цвет ползунка при наведении 
+}*/
+
+    /*ТЕСТНЕТ*/
+
+    .item.testnet{
+
+    }
+
+    /*МЕЙННЕТ*/
+
+    .item.mainnet{
+
+    }
+
+
+
+
+
+
+
+
+
+/*СТРАНИЦА ПРОЕКТА*/
+
+#projectPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Начало страницы */
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/* .projectName{
+    font-family: Raleway;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 23.48px;
+    letter-spacing: 0.015em;
+    text-align: left;
+} */
+
+.projectLogo{
+    position: absolute;
+    width: 100%;
+    height: 236.69px;
+    top: 117px;
+    /*gap: 0px;*/
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+}
+
+.projectPlashka{
+    overflow-y: auto;
+    width: 100%;
+    margin: 1px; 
+    position: relative; /* fixed */
+    height: calc(100% - 303px);
+    top: 303px;
+    border-radius: 20px;
+    background: #FFFFFF;
+    border: 1px solid #0B0B0D;
+    opacity: 1;
+    padding: 20px;
+    box-sizing: border-box; 
+    flex-grow: 1;
+}
+
+.projectInfo{
+
+}
+
+.namePriceWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.projectButton{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.section-button {
+    padding: 10px 20px;
+    border: 1px solid #0B0B0D;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: #0B0B0D;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.section-button.active {
+    background-color: #0B0B0D;
+    color: #FFFFFF;
+}
+
+.section {
+    display: none;
+}
+
+.section.active-section {
+    display: block;
+}
+
+.price-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-control button {
+    background-color: #0B0B0D;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.quantity-control button:disabled {
+    background-color: #CCCCCC;
+    cursor: not-allowed;
+}
+
+.quantity-control span {
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+.pay-button {
+    background-color: #0B0B0D;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+}
+
+.pay-button.inactive {
+    background-color: #CCCCCC;
+    color: #FFFFFF;
+    cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+/*СТРАНИЦА ОПЛАТЫ*/
+#projectPay {
+    display: none;
+}
+
+.projectPayLogo{
+    position: absolute;
+    width: 100%;
+    height: 236.69px;
+    top: 70.54px;
+    /*gap: 0px;*/
+    display: flex; 
+    justify-content: center;
+    align-items: center; 
+}
+
+.projectPayPlashka{
+    overflow-y: auto;
+    width: 100%;
+    margin: 1px; 
+    position: relative; /* fixed */
+    height: calc(100% - 303px);
+    top: 303px;
+    border-radius: 20px;
+    background: #FFFFFF;
+    border: 1px solid #0B0B0D;
+    opacity: 1;
+    padding: 20px;
+    box-sizing: border-box; 
+    flex-grow: 1;
+}
+
+.payment-methods {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.payment-button {
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 45%;
+}
+
+.payment-button.active {
+    background-color: #000;
+    color: #fff;
+}
+
+input[type="email"], input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input.error {
+    border-color: red;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+
+.apply-button {
+    padding: 10px;
+    background-color: #000; /* Кнопка черная по умолчанию */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.apply-button.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.pay-button {
+    padding: 15px;
+    background-color: #000; /* Кнопка черная */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.pay-button.inactive {
+    background-color: #ccc; /* Если неактивна, то серая */
+    cursor: not-allowed;
+}

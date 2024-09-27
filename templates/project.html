@@ -1,0 +1,93 @@
+{% load static %}
+
+<section id="projectPage">
+    <div class="projectLogo">
+        <img src="{% static 'img/flame.png' %}">
+    </div>
+
+    <div class="projectPlashka">
+        <div class="projectInfo">
+            <div class="namePriceWrapper">
+                <h1 class="Headline">{{ project.name }}</h1>
+                <h1 class="headlinePrice">{{ project.price }}$</h1>
+            </div>
+            <h1 class="description">{{ project.description }}</h1>
+        </div>
+
+        <div class="button-container">
+            <button class="section-button active" id="project-button">О проекте</button>
+            <button class="section-button" id="investment-button">Инвестиции</button>
+            <button class="section-button" id="potential-button">Потенциал</button>
+        </div>
+
+        <div id="project-section" class="section active-section">{{ project.project_info }}</div>
+        <div id="investment-section" class="section">{{ project.investment_info }}</div>
+        <div id="potential-section" class="section">{{ project.potential_info }}</div>
+
+        <h1 class="razdelitel"></h1>
+
+        <!-- Активность 1 (Обязательная) -->
+        <details open>
+            <summary class="Headline">{{ project.activity1_name }}</summary>
+            <ul>
+                <li>{{ project.activity1_task }}</li>
+            </ul>
+            <div class="price-control">
+                <span class="price">{{ project.activity1_price }}</span>
+            </div>
+        </details>
+
+        <!-- Активности 2-10 (Необязательные) -->
+        {% for i in 2|to:10 %}
+        <h1 class="razdelitel"></h1>
+        <details>
+            <summary class="Headline">{{ project.activity{{ i }}_name }}</summary>
+            <ul>
+                <li>{{ project.activity{{ i }}_task }}</li>
+            </ul>
+            <div class="price-control">
+                <span class="price">{{ project.activity{{ i }}_price }}</span>
+            </div>
+        </details>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Секция оплаты -->
+<section id="projectPay" style="display: none;">
+
+    <div class="projectPayLogo">
+        <img src="{% static 'img/handflame.png' %}">
+    </div>
+
+    <div class="projectPayPlashka">
+        <h2>ВАШ ЗАКАЗ:</h2>
+        <!-- Поля заказа с использованием данных модели -->
+        <p id="order-name-accounts">{{ project.accounts_order_name }}: аккаунты <span id="order-accounts">{{ project.accounts_price }} x 100$</span></p>
+        <p id="order-name-points">{{ project.points_order_name }}: поинты <span id="order-points">{{ project.points_price }} x 270$</span></p>
+        <p>Итого: <span id="order-total">{{ project.accounts_price|default:0|add:project.points_price|default:0 }}$</span></p>
+
+        <h2>СПОСОБЫ ОПЛАТЫ</h2>
+        <div class="payment-methods">
+            <button id="usdt-button" class="payment-button active" onclick="selectPaymentMethod('usdt')">USDT TRC20</button>
+            <button id="card-button" class="payment-button" onclick="selectPaymentMethod('card')">Картой</button>
+        </div>
+
+        <h2>ЭЛЕКТРОННАЯ ПОЧТА</h2>
+        <input type="email" id="email" placeholder="Введите email" oninput="validateEmail()">
+        <p id="email-error" class="error-message">Некорректный адрес электронной почты</p>
+
+        <h2>ПРОМОКОД</h2>
+        <input type="text" id="promo-code" placeholder="Введите промокод">
+        <button id="apply-button" class="apply-button" onclick="applyPromoCode()">Применить</button>
+        <p id="promo-error" class="error-message">Промокод недействителен</p>
+
+        <div class="agreement">
+            <input type="checkbox" id="agreement-checkbox" onchange="checkAgreement()">
+            <label for="agreement-checkbox">Принять пользовательское соглашение</label>
+            <p id="agreement-error" class="error-message">Необходимо принять пользовательское соглашение</p>
+        </div>
+
+        <button id="final-pay-button" class="pay-button inactive" disabled>ОПЛАТИТЬ</button>
+    </div>
+</section>
